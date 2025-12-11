@@ -36,7 +36,9 @@ def read_log_files(source_dir):
     for file in os.listdir(source_dir):
         if file.endswith('.log'):
             print(file)
-            
+            with open(file, 'r') as f:
+                for line in f:
+                    print(line)
     
 
 
