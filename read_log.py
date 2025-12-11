@@ -23,8 +23,21 @@ def main():
     )
     
     args = parser.parse_args()
+    read_log_files(args.source)
+
+
+
+def read_log_files(source_dir):
+    """
+    Read all log files from the source directory and print each line.
+    Args:
+        source_dir (str): Path to the directory containing log files
+    """
+    for file in os.listdir(source_dir):
+        if file.endswith('.log'):
+            print(file)
+            
     
-    print(args.source)
 
 
 if __name__ == '__main__':
